@@ -13,8 +13,10 @@ Sometime I want to visualise something while I am working in a notebook. This is
 
 # Usage
 
-`import Blackboard
+```import Blackboard
 
 jb = Blackboard.JupyterBlackboard()
 
-jb.Draw()`
+jb.Draw()```
+
+![image](Blackboard.png)
