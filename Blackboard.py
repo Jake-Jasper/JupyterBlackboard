@@ -1,15 +1,14 @@
 '''
 Before starting the notebook I had to use this may be an issue when importing...
-
 - jupyter nbextension enable --py widgetsnbextension
-
 - modified from -https://hub.mybinder.turing.ac.uk/user/martinrenou-ipycanvas-jm1q0gth/lab/tree/examples/hand_drawing.ipynb
-
 '''
 
 from ipywidgets import Image, ColorPicker, IntSlider, link, AppLayout, HBox, VBox, widgets
 
 from ipycanvas import RoughCanvas, hold_canvas, Canvas
+
+import datetime
 
 
 class JupyterBlackboard:
@@ -77,7 +76,7 @@ class JupyterBlackboard:
         self.canvas.stroke_style = '#FFFFFF'
         
     def save_to_file(self, *args, **kwargs):
-        self.canvas.to_file('blackboard.png')
+        self.canvas.to_file(f"blackboard{datetime.datetime.now().strftime('-%Y-%m-%d:%s')}.png")
         
         # Listen to changes on the ``image_data`` trait and call ``save_to_file`` when it
         # changes
