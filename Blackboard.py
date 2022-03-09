@@ -76,7 +76,7 @@ class JupyterBlackboard:
         self.canvas.stroke_style = '#FFFFFF'
         
     def save_to_file(self, *args, **kwargs):
-        self.canvas.to_file(f"blackboard{datetime.datetime.now().strftime('-%Y-%m-%d:%s')}.png")
+        self.canvas.to_file(f"blackboard{datetime.datetime.now().strftime('-%Y-%m-%d-%s')}.png")
         
         # Listen to changes on the ``image_data`` trait and call ``save_to_file`` when it
         # changes
